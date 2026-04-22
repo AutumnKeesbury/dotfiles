@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../src/open-website.tsx"],
+  "sourcesContent": ["import { open } from \"@raycast/api\";\n\n/**\n * Open Website Command\n *\n * This command simply opens the Caschys Blog website in the default browser.\n * It provides a quick way for users to access the blog directly.\n */\nexport default async function Command() {\n  await open(\"https://www.stadt-bremerhaven.de\");\n}\n"],
+  "mappings": "yaAAA,IAAAA,EAAA,GAAAC,EAAAD,EAAA,aAAAE,IAAA,eAAAC,EAAAH,GAAA,IAAAI,EAAqB,wBAQrB,eAAOF,GAAiC,CACtC,QAAM,QAAK,kCAAkC,CAC/C",
+  "names": ["open_website_exports", "__export", "Command", "__toCommonJS", "import_api"]
+}
