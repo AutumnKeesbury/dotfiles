@@ -12,76 +12,12 @@ return {
   },
 
   -- customize alpha options
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.type = "group"
-      opts.section.header.val = {
-        {
-          type = "text",
-          val = " ██████   █████                   █████   █████ █████ ██████   ██████",
-          opts = { hl = "NeovimDashboardLogo1", shrink_margin = false, position = "center" },
-        },
-        {
-          type = "text",
-          val = "░░██████ ░░███                   ░░███   ░░███ ░░███ ░░██████ ██████ ",
-          opts = { hl = "NeovimDashboardLogo2", shrink_margin = false, position = "center" },
-        },
-        {
-          type = "text",
-          val = " ░███░███ ░███   ██████   ██████  ░███    ░███  ░███  ░███░█████░███ ",
-          opts = { hl = "NeovimDashboardLogo3", shrink_margin = false, position = "center" },
-        },
-        {
-          type = "text",
-          val = " ░███░░███░███  ███░░███ ███░░███ ░███    ░███  ░███  ░███░░███ ░███ ",
-          opts = { hl = "NeovimDashboardLogo4", shrink_margin = false, position = "center" },
-        },
-        {
-          type = "text",
-          val = " ░███ ░░██████ ░███████ ░███ ░███ ░░███   ███   ░███  ░███ ░░░  ░███ ",
-          opts = { hl = "NeovimDashboardLogo5", shrink_margin = false, position = "center" },
-        },
-        {
-          type = "text",
-          val = " ░███  ░░█████ ░███░░░  ░███ ░███  ░░░█████░    ░███  ░███      ░███ ",
-          opts = { hl = "NeovimDashboardLogo6", shrink_margin = false, position = "center" },
-        },
-        {
-            type = "text",
-            val = " █████  ░░█████░░██████ ░░██████     ░░███      █████ █████     █████",
-            opts = { hl  = "NeovimDashboardLogo7", shrink_margin = false, position = "center"},
-        },
-        {
-            type = "text",
-            val = "░░░░░    ░░░░░  ░░░░░░   ░░░░░░       ░░░      ░░░░░ ░░░░░     ░░░░░ ",
-            opts = { hl  = "NeovimDashboardLogo8", shrink_margin = false, position = "center"},
-        },
-        { type = "padding", val = 2 },
-        {
-          type = "text",
-          val = "Autumn's NeoVIM (◕‿◕✿)",
-          opts = { hl = "NeovimDashboardUsername", shrink_margin = false, position = "center" },
-        },
-      }
-      -- Define and set highlight groups for each logo line
-      vim.api.nvim_set_hl(0, "NeovimDashboardLogo1", { fg = "#9d0208" }) -- Red
-      vim.api.nvim_set_hl(0, "NeovimDashboardLogo2", { fg = "#bb0c02" }) 
-      vim.api.nvim_set_hl(0, "NeovimDashboardLogo3", { fg = "#d92202" }) 
-      vim.api.nvim_set_hl(0, "NeovimDashboardLogo4", { fg = "#f73d02" }) 
-      vim.api.nvim_set_hl(0, "NeovimDashboardLogo5", { fg = "#fe6619" }) 
-      vim.api.nvim_set_hl(0, "NeovimDashboardLogo6", { fg = "#fe8c36" }) 
-      vim.api.nvim_set_hl(0, "NeovimDashboardLogo7", { fg = "#ffad53" }) 
-      vim.api.nvim_set_hl(0, "NeovimDashboardLogo8", { fg = "#ffc971" }) -- Yellow
-      vim.api.nvim_set_hl(0, "NeovimDashboardUsername", { fg = "#ffc971" }) -- Faded Red
-		-- stylua: ignore
-		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#311B92" })       -- Dark Indigo
-      vim.api.nvim_set_hl(0, "AlphaShortcut", { fg = "#8BC34A" }) -- Greenish
-      vim.api.nvim_set_hl(0, "AlphaFooter", { fg = "#edd691" })
-      return opts
-    end,
-  },
+{
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+};
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
