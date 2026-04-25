@@ -5,13 +5,12 @@ return {
     dashboard = {
 
       sections = {
-        { section = "header" },
-        {
-          pane = 2,
+        { 
           section = "terminal",
-          cmd = "colorscript -e square",
-          height = 5,
-          padding = 1,
+          cmd = "pokemon-colorscripts -n venusaur --no-title",
+          indent = 10,
+          height = 20,
+          padding = 2,
         },
         { section = "keys", gap = 1, padding = 1 },
         { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
@@ -29,6 +28,14 @@ return {
           padding = 1,
           ttl = 5 * 60,
           indent = 3,
+        },
+        {
+          pane = 2,
+          section = "terminal",
+          cmd = "pokemon-colorscripts -n bulbasaur --no-title",
+          indent = 20,
+          height = 15,
+          padding = 2,
         },
         { section = "startup" },
       },
